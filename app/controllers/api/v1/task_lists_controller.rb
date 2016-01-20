@@ -11,13 +11,17 @@ class Api::V1::TaskListsController < ApplicationController
   end
 
   def update
-    if current_user.id == params.id
+    list = TaskList.find(params[:id])
+    if current_user.id == list.user_id
       respond_with :api, :v1, TaskList.update(params[:id], task_list_params)
     end
   end
 
   def destroy
-    respond_with :api, :v1, TaskList.destroy(params[:id])
+    list = TaskList.find(params[:id])
+    if current_user.id == list.user_id
+      respond_with :api, :v1, TaskList.destroy(params[:id])
+    end
   end
 
   private
