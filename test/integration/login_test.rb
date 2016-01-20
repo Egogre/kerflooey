@@ -33,7 +33,7 @@ class LoginTest < Capybara::Rails::TestCase
     end
 
     assert_equal "/login", current_path
-    assert page.has_content?("Name can't be blank")
+    assert page.has_content?("Email can't be blank")
   end
 
   test "new user cannot create account with missing password" do
