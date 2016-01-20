@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :tasks, only: [:index, :create, :update, :destroy], defaults: { format: :json }
-      resources :lists, only: [:index, :create, :update, :destroy], defaults: { format: :json }
+      resources :task_lists, only: [:index, :create, :update, :destroy], defaults: { format: :json }
     end
   end
 
