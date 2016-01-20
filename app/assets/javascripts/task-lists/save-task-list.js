@@ -15,7 +15,6 @@ function saveTaskList(listForm) {
 }
 
 function showErrors(response) {
-  debugger;
   clearErrors();
   $('.errors').scrollTop(0);
   var errors = JSON.parse(response.responseText).errors;

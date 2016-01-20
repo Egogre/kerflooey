@@ -32,7 +32,11 @@ function patchList(listID, newTitle, newDescription, $taskList) {
     url:  '/api/v1/task_lists/' + listID,
     data: {task_list: {title: newTitle, description: newDescription}},
     error: function(response) {
-      userNotOwner();
+      if (response.responseText) { 
+        showErrors(response);
+      } else {
+        userNotOwner();
+      }
     },
     success: function(response){
       updateList($taskList, newTitle, newDescription);

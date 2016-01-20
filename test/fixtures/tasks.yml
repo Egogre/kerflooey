@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  status: MyString
+  notes: MyText
+  due: 2016-01-20
+  start: 2016-01-20
+  references: 
+  references: 
+
+two:
+  title: MyString
+  status: MyString
+  notes: MyText
+  due: 2016-01-20
+  start: 2016-01-20
+  references: 
+  references: 
