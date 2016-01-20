@@ -59,7 +59,7 @@ class LoginTest < Capybara::Rails::TestCase
     end
 
     assert_equal "/login", current_path
-    assert page.has_content?("doesn't match")
+    assert page.has_content?("Password confirmation doesn't match Password")
   end
 
   test "unauthenticated user can sign in with valid attributes" do
