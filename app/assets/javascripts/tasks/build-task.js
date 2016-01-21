@@ -1,8 +1,13 @@
-function buildTask(taskID, taskTitle, taskNotes, taskStart, taskDue, $tasks) {
+function buildTask(taskID, taskTitle, taskStatus, taskNotes, taskStart, taskDue, taskListID) {
+  var $tasks = $("div[data-id='" + taskListID + "']").find('.tasks');
   $tasks.prepend(
     '<div class="task" data-task="' + taskID + '">' +
       '<div class="task-info">' +
-        '<h2>' + taskTitle + '</h2>' +
+        '<h3>' + taskTitle + '</h3>' +
+        '<h4 class="status">' + taskStatus + '</h4>' +
+        '<button class="task-status" data-task="' + taskID + '">' +
+          'Update Status' +
+        '</button>' +
         '<p class="task-notes">' + taskNotes + '</p>' +
         '<p>start date:</p>' +
         '<p class="task-start">' + taskStart + '</p>' +

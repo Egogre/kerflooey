@@ -2,6 +2,8 @@ $(document).ready(function(){
   $errorsDiv = $('.errors');
   $taskLists = $('.task-lists');
 
+//////////////TASK LISTS
+
   $('.list-save').on('click', function () {
     saveTaskList(this);
   });
@@ -22,11 +24,30 @@ $(document).ready(function(){
     deleteTaskList(this);
   });
 
+////////////////////TASKS
+
   $taskLists.on('click', '.add-task', function(){
     saveTask(this);
   });
 
+  $taskLists.on('click', '.task-status', function(){
+    updateTaskStatus(this);
+  });
+
+  $taskLists.on('click', '.task-edit', function(){
+    editTask(this);
+  });
+
+  $taskLists.on('click', '.edit-task-update', function(){
+    submitEditTask(this);
+  });
+
+  $taskLists.on('click', '.task-delete', function(){
+    deleteTask(this);
+  });
+
   fetchTaskLists();
+  fetchTasks();
 });
 
 var $errorsDiv;

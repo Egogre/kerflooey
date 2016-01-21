@@ -11,7 +11,7 @@ function buildList(listID, listTitle, listDescription) {
           'Delete Task List' +
         '</button>' +
       '</div>' +
-      '<div class="tasks">' +
+      '<div class="tasks" data-id="' + listID + '">' +
         '<h4>Create A New Task:</h4>' +
         '<h4 class="task-list-errors"></h4>' +
         '<h5>Title:</h5>' +

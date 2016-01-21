@@ -38,10 +38,12 @@ function addTask($tasks, response) {
   clearTaskErrors($tasks);
   var taskID = response.id;
   var taskTitle = response.title;
+  var taskStatus = response.status;
   var taskNotes = response.notes;
   var taskStart = response.start;
   var taskDue = response.due;
-  buildTask(taskID, taskTitle, taskNotes, taskStart, taskDue, $tasks);
+  var taskListID = response.task_list_id;
+  buildTask(taskID, taskTitle, taskStatus, taskNotes, taskStart, taskDue, taskListID);
 }
 
 function clearFields() {
