@@ -22,6 +22,10 @@ $(document).ready(function(){
     deleteTaskList(this);
   });
 
+  $taskLists.on('click', '.add-task', function(){
+    saveTask(this);
+  });
+
   fetchTaskLists();
 });
 

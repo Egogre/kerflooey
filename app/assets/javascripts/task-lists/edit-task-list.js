@@ -3,7 +3,7 @@ function editTaskList(listButton) {
   var $taskList = $("div[data-id='" + listID + "']");
   var listCurrentTitle = $taskList.find('h2').text();
   var listCurrentDescription = $taskList.find('p').text();
-  $taskList.append(buildEditArea(listID));
+  $taskList.prepend(buildEditArea(listID));
   $taskList.find('.edit-list-title').val(listCurrentTitle);
   $taskList.find('.edit-list-body').val(listCurrentDescription);
 }
@@ -32,7 +32,7 @@ function patchList(listID, newTitle, newDescription, $taskList) {
     url:  '/api/v1/task_lists/' + listID,
     data: {task_list: {title: newTitle, description: newDescription}},
     error: function(response) {
-      if (response.responseText) { 
+      if (response.responseText) {
         showErrors(response);
       } else {
         userNotOwner();

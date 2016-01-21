@@ -10,6 +10,7 @@ function saveTaskList(listForm) {
     },
     success: function(response){
       addList(response);
+      clearFields();
     }
   });
 }
@@ -29,4 +30,9 @@ function addList(response) {
   var listTitle = response.title;
   var listDescription = response.description;
   buildList(listID, listTitle, listDescription);
+}
+
+function clearFields() {
+  $('#new-list-title').val("");
+  $('#new-list-description').val("");
 }
