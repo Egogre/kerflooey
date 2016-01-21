@@ -42,6 +42,10 @@ $(document).ready(function(){
     submitEditTask(this);
   });
 
+  $taskLists.on('click', '.close-task-edit-window', function(){
+    closeTaskEditWindow(this);
+  });
+
   $taskLists.on('click', '.task-delete', function(){
     deleteTask(this);
   });
